@@ -21,15 +21,36 @@ using dolphindb;
 
 namespace DolphinDBForExcel.WPFControls
 {
-
-
-   
     /// <summary>
     /// Interaction logic for ScriptEditor.xaml
     /// </summary>
     public partial class DDBScriptEditor : UserControl
     {
         private Config DefaultCfg { get; set; }
+
+        public string ScriptText
+        {
+            get
+            {
+                return new TextRange(EditBox.Document.ContentStart, EditBox.Document.ContentEnd).Text;
+            }
+            set
+            {
+                new TextRange(EditBox.Document.ContentStart, EditBox.Document.ContentEnd).Text = value;
+            }
+        }
+
+        public string ResultText
+        {
+            get
+            {
+                return ScriptResultTextBox.Text;
+            }
+            set
+            {
+                ScriptResultTextBox.Text = value;
+            }
+        }
 
         ObjectViewTreeHelper objectViewTreeHelper = new ObjectViewTreeHelper();
 
@@ -58,7 +79,7 @@ namespace DolphinDBForExcel.WPFControls
                 fontSize = EditBox.FontSize,
                 lineHeight = EditBox.Document.LineHeight,
                 overwrite = false,
-                maxRowsToImportInto = 65535,
+                maxRowsToImportInto = 65536,
                 autoLimitMaxRowsToImport = true
             };
 
@@ -307,7 +328,6 @@ namespace DolphinDBForExcel.WPFControls
                 if (c != null)
                 {
                     conn = c;
-                    Forms.ScriptEditor.CurrentConnection = conn;
                     ResetServers();
                 }
             }
@@ -330,7 +350,6 @@ namespace DolphinDBForExcel.WPFControls
                     return;
 
                 ConnectionController.Instance.ResetConnection(conn, sinfoSelected);
-                Forms.ScriptEditor.CurrentConnection = conn;
                 objectViewTreeHelper.UpdateObjectViewItem(conn, objectViewItemSource);
             }
             catch (Exception ex)

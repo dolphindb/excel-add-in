@@ -6,7 +6,7 @@
         <group id="DolphinDBForExcelGroup" label="DolphinDB">
           <button
             id="ShowDolphinDBScriptEditor"
-            label="Script Editor"
+            label="DolphinDB for Excel"
             getImage="GetScriptEditorButtonImage"
             size="large"
             showImage="true"

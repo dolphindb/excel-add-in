@@ -18,11 +18,6 @@ namespace DolphinDBForExcel
 {
     class AddinViewController: Singleton<AddinViewController>
     {
-        public IRibbonExtensibility CreateAddinRibbon()
-        {
-            return new AddinRibbon();
-        }
-
         public void ShowScriptEditorWindow()
         {
             try

@@ -12,7 +12,8 @@ namespace DolphinDBForExcel.Forms
 {
     public partial class ScriptEditor : Form
     {
-        public static DBConnection CurrentConnection { get; set; }
+        private static string lastScriptText = "";
+        private static string lastResult = "";
 
         public ScriptEditor()
         {
@@ -22,19 +23,22 @@ namespace DolphinDBForExcel.Forms
 
         private void InitConnection(object sender, EventArgs e)
         {
-            if (CurrentConnection != null)
-            {
-                wpfScriptEditor1.InitConnection(CurrentConnection);
-                return;
-            }
             DBConnection conn = AddinViewController.Instance.ShowLoginDialog();
             if (conn == null)
             {
                 Close();
                 return;
             }
-            CurrentConnection = conn;
             wpfScriptEditor1.InitConnection(conn);
+            wpfScriptEditor1.ScriptText = lastScriptText;
+            wpfScriptEditor1.ResultText = lastResult;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            lastScriptText = wpfScriptEditor1.ScriptText;
+            lastResult = wpfScriptEditor1.ResultText;
+            base.OnClosing(e);
         }
     }
 }

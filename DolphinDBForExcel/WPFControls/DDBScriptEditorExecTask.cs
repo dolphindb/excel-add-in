@@ -18,7 +18,7 @@ namespace DolphinDBForExcel.WPFControls
         {
             int importedRow = cfg.autoLimitMaxRowsToImport ? Math.Min(tbTotalRows, cfg.maxRowsToImportInto) : tbTotalRows;
             if (importedRow == tbTotalRows)
-                return string.Format("{0} of records have been imported!", importedRow);
+                return string.Format("{0} records have been imported!", importedRow);
             else
                 return string.Format("{0}/{1} of records have been imported! " +
                     "To change the number of rows being imported, please go to settings.",
@@ -116,7 +116,7 @@ namespace DolphinDBForExcel.WPFControls
             switch(result.srcForm)
             {
                 case DATA_FORM.DF_VECTOR:
-                    dt.Columns[0].ColumnName = valueName + "_col0";
+                    dt.Columns[0].ColumnName = valueName;
                     break;
                 case DATA_FORM.DF_DICTIONARY:
                     {
