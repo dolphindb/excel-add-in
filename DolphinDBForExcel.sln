@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DolphinDBForExcel", "DolphinDBForExcel\DolphinDBForExcel.csproj", "{E98559BA-6DA4-40CB-820E-1D30A6B27C3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DolphinDBForExcelTest", "DolphinDBForExcelTest\DolphinDBForExcelTest.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E98559BA-6DA4-40CB-820E-1D30A6B27C3A} = {E98559BA-6DA4-40CB-820E-1D30A6B27C3A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DolphinDBForExcelWPFLib", "DolphinDBForExcelWPFLib\DolphinDBForExcelWPFLib.csproj", "{8904FCC9-BA4E-4F60-9AA1-55534B9C904F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDBWPF", "DDBWPF\DDBWPF.csproj", "{97305670-F851-4A65-89FC-75B2EF3AE5C7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDolphinDBForExcel", "SetupDolphinDBForExcel\SetupDolphinDBForExcel.vdproj", "{99CB3FA7-B807-4F3A-99A7-1A1BFA997FD7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDeolphinDBForExcelRelease", "SetupDeolphinDBForExcelRelease\SetupDeolphinDBForExcelRelease.vdproj", "{0620DE41-4236-48A3-AE42-C61D662D4569}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E98559BA-6DA4-40CB-820E-1D30A6B27C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E98559BA-6DA4-40CB-820E-1D30A6B27C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E98559BA-6DA4-40CB-820E-1D30A6B27C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E98559BA-6DA4-40CB-820E-1D30A6B27C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8904FCC9-BA4E-4F60-9AA1-55534B9C904F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8904FCC9-BA4E-4F60-9AA1-55534B9C904F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8904FCC9-BA4E-4F60-9AA1-55534B9C904F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8904FCC9-BA4E-4F60-9AA1-55534B9C904F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97305670-F851-4A65-89FC-75B2EF3AE5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97305670-F851-4A65-89FC-75B2EF3AE5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97305670-F851-4A65-89FC-75B2EF3AE5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97305670-F851-4A65-89FC-75B2EF3AE5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99CB3FA7-B807-4F3A-99A7-1A1BFA997FD7}.Debug|Any CPU.ActiveCfg = Debug
+		{99CB3FA7-B807-4F3A-99A7-1A1BFA997FD7}.Release|Any CPU.ActiveCfg = Release
+		{0620DE41-4236-48A3-AE42-C61D662D4569}.Debug|Any CPU.ActiveCfg = Debug
+		{0620DE41-4236-48A3-AE42-C61D662D4569}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C21E4DB-555B-4D90-BD82-E444BB8E6CA5}
+	EndGlobalSection
+EndGlobal

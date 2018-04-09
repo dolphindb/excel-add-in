@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="DolphinDBForExcel.SqlSelectBuilder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DolphinDBForExcel"
+             xmlns:Themes1="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="White">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="0,0,10,0">
+        <ListBox x:Name="fieldCheckedListBox" HorizontalAlignment="Left" Margin="10,0,0,106.4" MinWidth="100" MinHeight="50" Background="{x:Null}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding field}" IsChecked="False"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1" Margin="146.8,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+                <ToolBarTray HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Height="37.067">
+                    <ToolBar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-16,-7.067" Background="{x:Null}" Style="{StaticResource ColorlessToolBarStyle}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Height="27.067" >
+                        <Button  HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Image Source="{StaticResource delete_horizontal_line}"/>
+                        </Button>
+                        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" >
+                            <Image Source="{StaticResource upward_arrow}"/>
+                        </Button>
+                        <Button  HorizontalAlignment="Left" VerticalAlignment="Top" >
+                            <Image Source="{StaticResource downward_arrow}"/>
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+                <ListBox x:Name="aggList" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}"  MinWidth="100" MinHeight="20" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="0,1,0,0" VerticalContentAlignment="Center" Height="63.733"  >
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Content="agg" VerticalContentAlignment="Center" FontSize="10" FontFamily="Microsoft JhengHei" FontWeight="Bold"/>
+                                <TextBox TextWrapping="WrapWithOverflow"  Text="{Binding FunName}" VerticalContentAlignment="Center" FontSize="10" FontFamily="Microsoft JhengHei" FontWeight="Bold" MinWidth="45" Margin="0,2,0,2"/>
+                                <Label Content="argu" VerticalContentAlignment="Center" FontSize="10" FontFamily="Microsoft JhengHei" FontWeight="Bold"/>
+                                <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding Arguments}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <ComboBox Width="Auto" FontFamily="Microsoft JhengHei" FontSize="10" IsEditable="True" MinWidth="60"
+                                            DisplayMemberPath="PV" SelectedValuePath="PK"              
+                                            SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Items}" Text="{Binding TextItem, UpdateSourceTrigger=LostFocus}"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

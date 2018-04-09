@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabData">
+        <group id="DolphinDB_Group"  >
+            <button id="DolphinDB" onAction="EnterScriptEditor"  size="large"  showImage="true" label="DolphinDB"  imageMso="EditQuery"/>
+          --><!--<button id="Login" onAction="ConfigConnection" label="connect"  size="large" showImage="true" imageMso="ServerConnection"/>--><!--
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+  
+ <contextMenus>  
+    <contextMenu idMso="ContextMenuCell">  
+      <button id="DolphinDB_RunDBCommand" label="Run DB Cmd" onAction="InputAndExecuteDBCmd" insertAfterMso="Copy" />  
+    </contextMenu>  
+  </contextMenus>  
+</customUI>-->
+
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabData">
+        <group id="DolphinDBForExcelGroup" label="DolphinDB">
+          <button
+            id="ShowDolphinDBScriptEditor"
+            label="Script Editor"
+            getImage="GetScriptEditorButtonImage"
+            size="large"
+            showImage="true"
+            onAction="EnterScriptEditor"
+            />
+          <!--imageMso="EditQuery"-->
+            <!--getImage="GetControlImage"
+            onAction="OnClickMySqlForExcel"
+            getPressed="GetButtonPressed"
+            showImage="true"
+            size="large"/>-->
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+
