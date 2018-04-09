@@ -6,22 +6,22 @@
              xmlns:local="clr-namespace:DolphinDBForExcel.WPFControls"
              mc:Ignorable="d" 
              Width="474.735"  Background="#FFEEEEF2" Height="330.448" FontFamily="Microsoft YaHei UI" >
-    <Grid HorizontalAlignment="Left" Margin="0,0,0,0.4" Width="474">
-        <Grid x:Name="ConfigItemGrid" Margin="32,28,32,0" Height="223" VerticalAlignment="Top">
+    <Grid Margin="0,0,0.4,0.4">
+        <Grid x:Name="ConfigItemGrid" Margin="32,28,40,0" Height="223" VerticalAlignment="Top">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto" />
 
             </Grid.RowDefinitions>
-            <Expander  Margin="0,2.229,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left" IsExpanded="True" Width="Auto" FontFamily="Microsoft YaHei UI">
+            <Expander  Margin="0,2,-0.4,0"  VerticalAlignment="Top" IsExpanded="True" Width="Auto" FontFamily="Microsoft YaHei UI">
                 <Expander.Header>
-                    <StackPanel Orientation="Horizontal" Width="386" >
+                    <StackPanel Orientation="Horizontal"  >
                         <TextBlock Text="Editor Font" FontFamily="Microsoft YaHei UI"/>
-                        <Border Width="307" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="0,1,0,0" Height="1" Margin="10,0,0,0"/>
+                        <Border Width="400" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="0,1,0,0" Height="1" Margin="10,0,0,0"/>
                     </StackPanel>
 
                 </Expander.Header>
-                <Grid HorizontalAlignment="Left" Margin="32.433,0,0,0" VerticalAlignment="Top">
+                <Grid Margin="32,0,8,0" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
@@ -30,32 +30,38 @@
                     <Label Content="Font:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="38.757"/>
                     <Label Content="Line spacing:" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Grid.Row="2" Height="25" Width="84.123"/>
                     <Label Content="Size:" HorizontalAlignment="Left" Margin="0,0.76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.025,0.492" Grid.Row="1" Height="25" Width="35.72"/>
-                    <ComboBox x:Name="FontChoiceBox" Margin="89,0,-77.4,0" VerticalAlignment="Top" MinWidth="100" HorizontalAlignment="Left" Width="278" Height="25" VerticalContentAlignment="Center"/>
+                    <ComboBox x:Name="FontChoiceBox" Margin="89,0,0,0" VerticalAlignment="Top" MinWidth="100" Height="25" VerticalContentAlignment="Center"/>
                     <TextBox x:Name="FontSizeBox" Height="25" Margin="89.226,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="90" Grid.Row="1" VerticalContentAlignment="Center"/>
                     <TextBox x:Name="LineHeightBox" Height="25" Margin="89.226,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90" Grid.Row="2" VerticalContentAlignment="Center" />
                 </Grid>
             </Expander>
-            <Expander  IsExpanded="True" Grid.Row="1" Margin="0,10.8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Expander  IsExpanded="True" Grid.Row="1" Margin="0,10.6,-0.4,0" VerticalAlignment="Top">
                 <Expander.Header>
-                    <StackPanel Orientation="Horizontal" Width="384" >
+                    <StackPanel Orientation="Horizontal" >
                         <TextBlock><Run Text="Import Option"/><Run Text="s"/></TextBlock>
-                        <Border Width="282" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="0,1,0,0" Height="1" Margin="10,0,0,0"/>
+                        <Border Width="400" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="0,1,0,0" Height="1" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Expander.Header>
-                <Grid HorizontalAlignment="Left" Margin="32.433,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="71.032">
+                <Grid Margin="32,0,8,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="71">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="23*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="36*"/>
                         <RowDefinition Height="34*"/>
                     </Grid.RowDefinitions>
-                    <CheckBox x:Name="OverwriteCheckBox" Content="Allow to overwrite existing data" HorizontalAlignment="Left" Margin="10,6.042,0,0" VerticalAlignment="Top" Grid.Row="2" Height="15.098" />
-                    <CheckBox x:Name="AutolimitTableRowsCheckBox" Content="The maximum number of rows imported"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,9.765,0,11.154" Grid.Row="1"  Height="15.098" />
-                    <TextBox x:Name="maxRowsToLoadIntoExcelBox" HorizontalAlignment="Left" Margin="278,4.2,-40.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Grid.Row="1" Height="25" IsEnabled="{Binding IsChecked ,ElementName=AutolimitTableRowsCheckBox}" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="OverwriteCheckBox" Content="Allow to overwrite existing data" HorizontalAlignment="Left" Margin="10,6.2,0,0" VerticalAlignment="Top" Grid.Row="2" Height="15" Width="202" />
+
+                    <CheckBox x:Name="AutolimitTableRowsCheckBox" Content="The maximum number of rows imported" VerticalAlignment="Center" Margin="10,10.2,4,10.8" Grid.Row="1"  Height="15" />
+                    <TextBox x:Name="maxRowsToLoadIntoExcelBox" Margin="6.8,0,0,0" TextWrapping="Wrap" IsEnabled="{Binding IsChecked, ElementName=AutolimitTableRowsCheckBox}" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="1" Height="25"/>
+
                 </Grid>
             </Expander>
 
         </Grid>
-        <WrapPanel Margin="268,267,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="179">
+        <WrapPanel Margin="0,267,30,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="179">
             <Button x:Name="ResetEditorButton" Content="Reset" VerticalAlignment="Top" Click="ResetEditorButton_Click" HorizontalAlignment="Left" Padding="4,4,4,4" Width="50" RenderTransformOrigin="0.951,0.575" Margin="0,0,10,0" Height="25"/>
             <Button Content="OK" Padding="4,4,4,4" HorizontalAlignment="Left" Click="OkButton_Click" RenderTransformOrigin="0.606,-2.241" Width="50" VerticalAlignment="Top" Margin="0,0,10,0" Height="25"/>
             <Button Content="Cancel"  Padding="4,4,4,4" HorizontalAlignment="Left" Click="CancelButton_Click" RenderTransformOrigin="0.536,-0.714" Width="50" VerticalAlignment="Top" Height="25"/>

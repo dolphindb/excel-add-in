@@ -18,9 +18,9 @@ namespace DolphinDBForExcel.WPFControls
         {
             int importedRow = cfg.autoLimitMaxRowsToImport ? Math.Min(tbTotalRows, cfg.maxRowsToImportInto) : tbTotalRows;
             if (importedRow == tbTotalRows)
-                return string.Format("{0} records have been imported!", importedRow);
+                return string.Format("{0:N0} records have been imported!", importedRow);
             else
-                return string.Format("{0}/{1} of records have been imported! " +
+                return string.Format("{0:N0}/{1:N0} of records have been imported! " +
                     "To change the number of rows being imported, please go to settings.",
                     importedRow, tbTotalRows);
         }

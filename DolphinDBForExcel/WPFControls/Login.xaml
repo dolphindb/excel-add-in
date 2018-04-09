@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DolphinDBForExcel.WPFControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" Background="White" Width="475" Height="250">
+             mc:Ignorable="d" Background="White" Width="475" Height="258.533">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,7 +13,7 @@
             <DataTemplate x:Key="ItemWithDelButton">
                 <Grid MinHeight="20" MinWidth="40" Width="367" >
                     <TextBlock   Text="{Binding}"  Margin="0,2.38" MinWidth="20" />
-                    <Button   Height="20"  Tag="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" FontWeight="Normal" HorizontalAlignment="Right" Width="20" Click="ServerDeleteButton_Click">
+                    <Button   Height="20"  Tag="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" FontWeight="Normal" HorizontalAlignment="Right" Width="20" Click="ServerDeleteButton_Click" ToolTip="Delete Server">
                         <Image Source="{StaticResource delete}"/>
                     </Button>
                 </Grid>
@@ -22,30 +21,30 @@
         </ResourceDictionary>
 
     </UserControl.Resources>
-    <Grid Margin="10,0,4,0">
+    <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="565*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" MinHeight="32.86"/>
-            <RowDefinition Height="Auto" MinHeight="48.24"/>
-            <RowDefinition Height="Auto" MinHeight="48.24"/>
-            <RowDefinition Height="Auto" MinHeight="51.375"/>
-            <RowDefinition Height="28*"/>
-            <RowDefinition Height="41*"/>
+            <RowDefinition Height="Auto" MinHeight="14.4"/>
+            <RowDefinition Height="Auto" MinHeight="29.6"/>
+            <RowDefinition Height="Auto" MinHeight="48.8"/>
+            <RowDefinition Height="Auto" MinHeight="42.4"/>
+            <RowDefinition Height="Auto" MinHeight="51.2"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="23*"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="ServerComboBox" Text="{Binding Path=Text}"  Margin="10,25.24,0,0" VerticalAlignment="Top" Grid.Row="2" Height="23" Grid.Column="1"   IsEditable="True" BorderThickness="1" ItemTemplate="{DynamicResource ItemWithDelButton}" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left" Width="377.889" ToolTip="host:port"/>
-        <TextBox x:Name="UsernameInputBox" Height="23" Margin="10,25.24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="377.889" FontFamily="Microsoft YaHei UI"/>
-        <PasswordBox x:Name="PasswordInputBox" Margin="10,28.375,0,0" VerticalAlignment="Top" Height="23" Grid.Row="4" Grid.Column="1" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left" Width="377.889"/>
-        <Label Content="Server" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Height="25.24" Grid.Column="1" Margin="4.646,0,0,0" Width="46.014" FontFamily="Microsoft YaHei UI"/>
-        <Label Content="User Id" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Height="25.24" Width="50.66" Grid.Column="1" RenderTransformOrigin="1.212,0.479" Margin="4.646,0,0,0" FontFamily="Microsoft YaHei UI"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="4.646,3.135,0,0" VerticalAlignment="Top" Grid.Row="4" Height="25.24" Width="64.447" Grid.Column="1" FontFamily="Microsoft YaHei UI"/>
-        <CheckBox x:Name="ConnSaveCheckBox" IsChecked="True" Content="Save Server" HorizontalAlignment="Left" Margin="10,7.996,0,0" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1" FontFamily="Microsoft YaHei UI"/>
-        <Button Content="OK" Margin="248,2.269,0,0" VerticalAlignment="Top" Grid.Row="6" Height="23" Grid.Column="1" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left" Width="63" Click="OKButton_Click" IsDefault="True" Background="#FFFDFDFD" />
-        <Button Content="Cancel" Margin="324.889,2.269,0,0" VerticalAlignment="Top" Grid.Row="6" Height="23" Grid.Column="1" Background="#FFFDFDFD" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left" Width="63" Click="CancelButton_Click" IsCancel="True"/>
-        <Label Content="DolphinDB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="113.873" FontSize="18" Height="32.86" Grid.Row="1" Grid.Column="1" Margin="4.646,0,0,0" FontWeight="Light" FontFamily="Microsoft YaHei UI Light"/>
+        <ComboBox x:Name="ServerComboBox" Text="{Binding Path=Text}"  Margin="10.2,27,40.2,0" VerticalAlignment="Top" Grid.Row="2" Height="23" Grid.Column="1"   IsEditable="True" BorderThickness="1" ItemTemplate="{DynamicResource ItemWithDelButton}" FontFamily="Microsoft YaHei UI" ToolTip="host:port" Grid.RowSpan="2"/>
+        <TextBox x:Name="UsernameInputBox" Height="23" Margin="10.2,21.2,40.2,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" FontFamily="Microsoft YaHei UI" Grid.RowSpan="2"/>
+        <PasswordBox x:Name="PasswordInputBox" Margin="10.2,27.8,40.2,0" VerticalAlignment="Top" Height="23" Grid.Row="4" Grid.Column="1" FontFamily="Microsoft YaHei UI"/>
+        <Label Content="Server" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Height="25" Grid.Column="1" Margin="4.2,2,0,0" Width="46" FontFamily="Microsoft YaHei UI"/>
+        <Label Content="User ID" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Height="25"  Grid.Column="1" RenderTransformOrigin="1.212,0.479" Margin="4.2,1.2,0,0" FontFamily="Microsoft YaHei UI" Width="53"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="4.2,2.8,0,0" VerticalAlignment="Top" Grid.Row="4" Height="25"  Grid.Column="1" FontFamily="Microsoft YaHei UI" Width="64"/>
+        <CheckBox x:Name="ConnSaveCheckBox" IsChecked="True" Content="Save Server" HorizontalAlignment="Left" Margin="10.2,8.6,0,0" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1" FontFamily="Microsoft YaHei UI" Height="15" Width="86"/>
+        <Button Content="OK" Margin="0,1,115.2,0" VerticalAlignment="Top" Grid.Row="6" Height="23" Grid.Column="1" FontFamily="Microsoft YaHei UI" Click="OKButton_Click" IsDefault="True" Background="#FFFDFDFD" HorizontalAlignment="Right" Width="63" RenderTransformOrigin="1.206,0.583" />
+        <Button Content="Cancel" Margin="0,1,40.2,0" VerticalAlignment="Top" Grid.Row="6" Height="23" Grid.Column="1" Background="#FFFDFDFD" FontFamily="Microsoft YaHei UI" Click="CancelButton_Click" IsCancel="True" HorizontalAlignment="Right" Width="63"/>
+        <Label Content="DolphinDB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" FontSize="18" Height="33" Grid.Row="1" Grid.Column="1" Margin="4.2,2.6,0,0" FontWeight="Light" FontFamily="Microsoft YaHei UI Light" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

@@ -37,14 +37,14 @@
             this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elementHost1.Location = new System.Drawing.Point(0, 0);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(574, 319);
+            this.elementHost1.Size = new System.Drawing.Size(532, 323);
             this.elementHost1.TabIndex = 0;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.login1;
             // 
             // LoginForm
             // 
-            this.ClientSize = new System.Drawing.Size(574, 319);
+            this.ClientSize = new System.Drawing.Size(532, 323);
             this.Controls.Add(this.elementHost1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LoginForm";
