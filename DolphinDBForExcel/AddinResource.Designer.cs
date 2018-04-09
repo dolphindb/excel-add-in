@@ -63,16 +63,6 @@ namespace DolphinDBForExcel {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _953217927 {
-            get {
-                object obj = ResourceManager.GetObject("_953217927", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap code {
             get {
                 object obj = ResourceManager.GetObject("code", resourceCulture);
@@ -123,16 +113,6 @@ namespace DolphinDBForExcel {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dolphindb_short_logo {
-            get {
-                object obj = ResourceManager.GetObject("dolphindb_short_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap file_code {
             get {
                 object obj = ResourceManager.GetObject("file_code", resourceCulture);
@@ -146,26 +126,6 @@ namespace DolphinDBForExcel {
         internal static System.Drawing.Bitmap folder {
             get {
                 object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_icon {
-            get {
-                object obj = ResourceManager.GetObject("folder_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lan_connect {
-            get {
-                object obj = ResourceManager.GetObject("lan_connect", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
