@@ -27,7 +27,8 @@ namespace DolphinDBForExcel
         public DataTable table;
         public IList<DATA_TYPE> columnSrcType;
         public DATA_FORM srcForm;
-        public bool matrix_HasColumnLabels;
+        public IList<string> matrix_ColumnLabels;
+        public IList<string> matrix_RowLabels;
     }
 
     class AddinBackend
@@ -128,7 +129,21 @@ namespace DolphinDBForExcel
             {
                 IMatrix m = entity as IMatrix;
                 IVector colLabels = m.getColumnLabels();
-                result.matrix_HasColumnLabels = !(colLabels == null || colLabels.columns() == 0);
+                if(!(colLabels == null || colLabels.columns() == 0))
+                {
+                    result.matrix_ColumnLabels = new List<string>();
+                    for (int i = 0; i != colLabels.rows(); i++)
+                        result.matrix_ColumnLabels.Add(colLabels.get(i).getString());
+                }
+
+                IVector rowLabels = m.getRowLabels();
+                if (!(rowLabels == null || rowLabels.columns() == 0))
+                {
+                    result.matrix_RowLabels = new List<string>();
+                    for (int i = 0; i != rowLabels.rows(); i++)
+                        result.matrix_RowLabels.Add(rowLabels.get(i).getString());
+                }
+
             }
 
             for (int i = 0; i != result.table.Columns.Count; i++)

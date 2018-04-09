@@ -35,6 +35,25 @@ namespace DolphinDBForExcel.WPFControls
             };
         }
 
+        private void AppendRowLabelIfMatrix(TableResult result)
+        {
+            if (result.srcForm != DATA_FORM.DF_MATRIX)
+                return;
+            if (result.matrix_RowLabels == null)
+                return;
+            DataTable dt = result.table;
+
+            DataColumn rowLabel = dt.Columns.Add(" ", typeof(string));
+            rowLabel.SetOrdinal(0);
+
+            for (int i = 0; i != result.matrix_RowLabels.Count; i++)
+            {
+                dt.Rows[i][rowLabel] = result.matrix_RowLabels[i];
+            }
+            result.columnSrcType.Insert(0, DATA_TYPE.DT_STRING);
+
+        }
+
         private async Task<TableResult>
             RunScriptAndFetchResultAsDataTableAsync(dolphindb.DBConnection conn, string script)
         {
@@ -66,6 +85,7 @@ namespace DolphinDBForExcel.WPFControls
         private async Task<string> RunScriptAndExportAsync(string script,Config cfg)
         {
             TableResult result = await RunScriptAndFetchResultAsDataTableAsync(conn, script);
+            AppendRowLabelIfMatrix(result);
             return ExportTableAndGenOutputLog(result.table, result.columnSrcType, cfg, null);
         }
 
@@ -79,6 +99,7 @@ namespace DolphinDBForExcel.WPFControls
         {
             Excel.Range topLeft = ShowSelectRangeInputBox();
             TableResult result = await RunScriptAndFetchResultAsDataTableAsync(conn, script);
+            AppendRowLabelIfMatrix(result);
             return ExportTableAndGenOutputLog(result.table, result.columnSrcType, cfg, topLeft);
         }
 
@@ -126,12 +147,14 @@ namespace DolphinDBForExcel.WPFControls
                     break;
                 case DATA_FORM.DF_MATRIX:
                     {
-                        if (result.matrix_HasColumnLabels)
-                            return;
-                      
-                        int colNum = dt.Columns.Count;
-                        for (int i = 0; i != colNum; i++)
-                            dt.Columns[i].ColumnName = valueName + "_col" + i;
+                        if (result.matrix_ColumnLabels == null )
+                        {
+                            int colNum = dt.Columns.Count;
+                            for (int i = 0; i != colNum; i++)
+                                dt.Columns[i].ColumnName = valueName + "_col" + i;
+                        }
+
+                        AppendRowLabelIfMatrix(result);
                     }
                     break;
             }

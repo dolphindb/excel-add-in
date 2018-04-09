@@ -330,6 +330,7 @@
     <None Include="Resources\code.png" />
     <None Include="Resources\953217927.jpg" />
     <None Include="Resources\ddb.jpg" />
+    <None Include="Resources\ddb2.jpg" />
     <Content Include="Resources\dolphindb_long_logo.jpg" />
     <None Include="Resources\database.ico" />
   </ItemGroup>
