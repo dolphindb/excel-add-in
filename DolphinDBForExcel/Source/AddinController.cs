@@ -18,36 +18,10 @@ namespace DolphinDBForExcel
 {
     class AddinViewController: Singleton<AddinViewController>
     {
-       // private OfficeTools.CustomTaskPane currentTaskPane = null;
-
-       // public static readonly string AddinTitle = "DolphinDBForExcel";
-        
-        //public void SetCurrentTaskPane(OfficeTools.CustomTaskPane taskPane)
-        //{
-        //    currentTaskPane = taskPane;
-        //}
-         
         public IRibbonExtensibility CreateAddinRibbon()
         {
             return new AddinRibbon();
         }
-
-        //public void ReplaceTaskPanelControlWith(Control newControls)
-        //{
-        //    //currentTaskPane must be set when the application startUp
-        //    Debug.Assert(currentTaskPane != null);
-
-        //    currentTaskPane.Control.Controls.Clear();
-        //    newControls.Dock = DockStyle.Fill;
-        //    currentTaskPane.Control.Controls.Add(newControls);
-        //}
-
-        //public bool ToggleTaskPaneVisable()
-        //{
-        //    //currentTaskPane must be set when the application startUp
-        //    Debug.Assert(currentTaskPane != null);
-        //    return currentTaskPane.Visible = (!currentTaskPane.Visible);
-        //}
 
         public void ShowScriptEditorWindow()
         {
@@ -63,9 +37,7 @@ namespace DolphinDBForExcel
         }
 
         public static void ShowErrorDialog(Exception e)
-        {
-            //using (var d = ErrorDialog.CreateFrom(e))
-            //    d.ShowDialog();
+        {  
             MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -84,14 +56,7 @@ namespace DolphinDBForExcel
                 return form.Connection;
             }
         }
-
-        //private void ShowTaskPane()
-        //{
-        //    Debug.Assert(currentTaskPane != null);
-        //    currentTaskPane.Visible = true;
-        //}
     }
-
 
     class ConnectionController : Singleton<ConnectionController>
     {

@@ -236,7 +236,6 @@
     <Compile Include="Forms\ScriptEditorConfiguration.Designer.cs">
       <DependentUpon>ScriptEditorConfiguration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\AddinFunction.cs" />
     <Compile Include="Source\AddinController.cs" />
     <Compile Include="Source\AddinBackend.cs" />
     <Compile Include="Ribbon\AddinRibbon.cs" />

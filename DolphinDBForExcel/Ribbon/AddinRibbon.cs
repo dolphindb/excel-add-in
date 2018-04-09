@@ -36,20 +36,6 @@ namespace DolphinDBForExcel.Ribbon
             this.ribbon = ribbonUI;
         }
 
-        public void ConfigConnection(Office.IRibbonControl control)
-        {
-            //AddinViewController.Instance.ShowLoginDialog();
-        }
-
-        //public void InputAndExecuteDBCmd(Office.IRibbonControl control)
-        //{
-        // //  AddinViewController.Instance.InputAndExecuteDBCmd();
-        //    using (var f = new LoginForm())
-        //    {
-        //        f.ShowDialog();
-        //    }
-        //}
-
         public void EnterScriptEditor(Office.IRibbonControl control)
         {
             AddinViewController.Instance.ShowScriptEditorWindow();
@@ -59,10 +45,6 @@ namespace DolphinDBForExcel.Ribbon
             return AddinResource.ddb;
         }
 
-        public object GetLoginButtonImage(Office.IRibbonControl control)
-        {
-            return AddinResource.login_user;
-        }
         #endregion
 
         #region 帮助器

@@ -17,100 +17,23 @@ namespace DolphinDBForExcel
 {
     public partial class ThisAddIn
     { 
-        //private AddinFunction function;
-
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            AddinViewController.ShowErrorDialog(e.Exception);
+            using (var f = ErrorDialog.CreateFrom(e.Exception.Message, e.Exception.ToString()))
+            {
+                f.ShowDialog();
+            }
         }
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             System.Windows.Forms.Application.ThreadException += Application_ThreadException;
-            //ActivateTaskPaneSpecifiedByWindows(Application.ActiveWindow);
-            //    Application.WindowActivate += (book, win) => RemoveInvalidTaskPand();
-            //    Application.WindowActivate += (book, win) => ActivateTaskPaneSpecifiedByWindows(win);
-            //}
         }
-
-        //private void ActivateTaskPaneSpecifiedByWindows(Excel.Window win)
-        //{
-        //    //AddinViewController.Instance.SetCurrentTaskPane(GetOrCreatTaskPane(win));
-        //}
-
-        //private void RemoveInvalidTaskPand()
-        //{
-        //    var invalidPanes = new List<OfficeTools.CustomTaskPane>();
-
-        //    foreach (var item in CustomTaskPanes)
-        //    {
-        //        bool valid = true;
-        //        Excel.Window w = null;
-
-        //        try
-        //        {
-        //            w = item.Window as Excel.Window;
-        //        }
-        //        catch
-        //        {
-        //            valid = false;
-        //        }
-
-        //        if (!valid)
-        //            invalidPanes.Add(item);
-        //    }
-
-        //    invalidPanes.ForEach(p => { CustomTaskPanes.Remove(p); p.Dispose(); });
-        //}
-
-        //private OfficeTools.CustomTaskPane GetTaskPaneOfTheWindow(Excel.Window win)
-        //{
-        //    return CustomTaskPanes.FirstOrDefault(p =>
-        //    {
-        //        if (p.Control.IsDisposed || p.Control.Disposing)
-        //            return false;
-
-        //        Excel.Window w = null;
-
-        //        try
-        //        {
-        //            w = p.Window as Excel.Window;
-        //        }
-        //        catch
-        //        {
-        //            w = null;
-        //        }
-
-        //        return w != null && w.Hwnd.Equals(win.Hwnd);
-        //    });
-        //}
-
-        //private OfficeTools.CustomTaskPane GetOrCreatTaskPane(Excel.Window win)
-        //{
-        //    OfficeTools.CustomTaskPane pane;
-
-        //    if ((pane = GetTaskPaneOfTheWindow(win)) != null)
-        //        return pane;
-
-        //    UserControl entranceCtrl;
-
-        //    entranceCtrl = AddinViewController.Instance.CreateAddinEntranceTaskPaneControl();
-        //    pane = CustomTaskPanes.Add(entranceCtrl, AddinViewController.AddinTitle,win);
-        //    return pane;
-        //}
-
+ 
         protected override Office.IRibbonExtensibility CreateRibbonExtensibilityObject()
         {
-            //return AddinViewController.Instance.CreateAddinRibbon();
             return new Ribbon.AddinRibbon();
         }
-
-        //protected override object RequestComAddInAutomationService()
-        //{
-        //    if (function == null)
-        //        function = new AddinFunction();
-        //    return function;
-        //}
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
