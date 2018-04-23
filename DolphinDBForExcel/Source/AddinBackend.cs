@@ -96,9 +96,17 @@ namespace DolphinDBForExcel
             return UpdateSessionObjs(conn);
         }
 
+        /*
+         *  return null if get DT_VOID
+         *  return table or throw exception if not DT_VOID
+         */
         public static  TableResult RunScriptAndFetchResultAsDataTable(DBConnection conn,string script)
         {
             IEntity entity = RunScript(conn,script);
+
+            if (entity.getDataType() == DATA_TYPE.DT_VOID)
+                return null;
+
             TableResult result = new TableResult
             {
                 srcForm = entity.getDataForm(),

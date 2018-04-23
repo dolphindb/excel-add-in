@@ -63,6 +63,12 @@ namespace DolphinDBForExcel.WPFControls
                  {
                      return AddinBackend.RunScriptAndFetchResultAsDataTable(conn, script);
                  });
+
+                if (tr == null)
+                    throw new ApplicationException("The script doesn't return any data.\n" +
+                        "If the script assigns data to some variables, " +
+                        "please select the variable at left panel to export data.");
+
                 return tr;
             }
             catch (Exception e)
