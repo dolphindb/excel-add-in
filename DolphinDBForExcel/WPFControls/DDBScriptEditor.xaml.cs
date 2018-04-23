@@ -357,5 +357,14 @@ namespace DolphinDBForExcel.WPFControls
                 AddinViewController.ShowErrorDialog(ex);
             }
         }
+
+        private void TreeViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ObjectViewItem item = ObjectView.SelectedItem as ObjectViewItem;
+            e.Handled = true;
+
+            if (item != null && item.Tag != null)
+                e.Handled = false;
+        }
     }
 }

@@ -35,7 +35,7 @@
         <TreeView x:Name="ObjectView" Margin="10,0,0,10" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.RowSpan="2" Grid.Row="1" FontFamily="Microsoft YaHei">
             <TreeView.Resources>
                 <ContextMenu x:Key="LoadMenu">
-                    <MenuItem  Header="{StaticResource RunAndLoadItemText}" Click="ObjectViewLoadItem_Click"/>
+                    <MenuItem Header="{StaticResource RunAndLoadItemText}" Click="ObjectViewLoadItem_Click"/>
                     <MenuItem Header="{StaticResource RunAndLoadToItemText}" Click="ObjectViewLoadToItem_Click" />
                 </ContextMenu>
             </TreeView.Resources>
@@ -46,6 +46,7 @@
                     <Setter Property="ItemsSource" Value="{Binding Children}"/>
                     <Setter Property="ContextMenu" Value="{StaticResource LoadMenu}"/>
                     <EventSetter Event="MouseRightButtonDown" Handler="TreeViewItem_MouseRightButtonDown"/>
+                    <EventSetter Event="MouseRightButtonUp" Handler="TreeViewItem_MouseRightButtonUp"/>
                 </Style>
             </TreeView.ItemContainerStyle>
             <TreeView.ItemTemplate>
