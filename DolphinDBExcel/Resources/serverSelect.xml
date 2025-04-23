@@ -1,0 +1,20 @@
+<customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' loadImage='LoadImage' onLoad='OnRibbonLoad'>
+  <ribbon>
+    <tabs>
+      <tab id='tab1' label='DolphinDB'>
+        <group id='group1'>
+          <gallery id="myGallery" label="Server" size ='large' getItemCount='getConfigServerItemCount' getItemLabel ='getConfigServerLabel' onAction='actionConfigServer'  image='server'></gallery>
+        </group>  
+          <group id='group4'>
+          <dropDown id='myDropDown' getItemCount='getServerListItemCount' getItemLabel ='getServerListLabel' getSelectedItemIndex ='getServerListIndexDefault' onAction='reconnectServer' tag='ToggleGridlines'/>
+        </group>  
+        <group id='group2'>
+          <button id='button2' label='Query' size ='large' onAction='queryFromServer' image='query'/>
+        </group>  
+        <group id='group3'>
+          <button id='button3' label='Settings' size ='large' onAction='config' image='config'/>
+        </group>  
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
